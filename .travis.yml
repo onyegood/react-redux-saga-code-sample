@@ -1,0 +1,27 @@
+language: node_js
+node_js:
+  - "stable"
+dist: trusty
+addons:
+  apt:
+    packages:
+      - libnss3
+
+notifications:
+  email: false
+
+# allow headful tests
+before_install:
+  - "sysctl kernel.unprivileged_userns_clone=1"
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+cache:
+  directories:
+    - node_modules
+
+before_script:
+  -  npm start &
+  -  sleep 20
+script:
+  - npm run build
+  - npm test
