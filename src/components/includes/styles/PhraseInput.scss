@@ -1,0 +1,25 @@
+.phrase-input-container {
+    width: 600px;
+    margin: auto;
+    margin-top: 3%;
+    .phrase-input {
+        width: 100%;
+        height: 70px;
+        border-radius: 10px;
+        font-size: 40px;
+        padding-left: 60px;
+        padding-right: 10px;
+    }
+    .phrase-input-icon {
+        font-size: 40px;
+        text-align: center;
+        padding-left: 20px;
+        padding-top: 13px;
+        position: absolute;
+        img {
+            width: 30px;
+            height: 30px;
+            // padding-top: 10px;
+        }
+    }
+}

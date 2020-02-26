@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
-import posts from "../pages/post/redux/reducer";
-
+import repositories from "../components/repositories/redux/reducer";
+import branches from "../components/branches/redux/reducer";
 export default combineReducers({
-  posts
+  repositories,
+  branches
 });

@@ -1,26 +1,19 @@
 import { takeLatest } from "redux-saga/effects";
 import { 
-  FETCH_POSTS, 
-  FETCH_POST, 
-  EDIT_POST, 
-  CREATE_NEW_POST, 
-  DELETE_POST, 
-  SEARCH_POST 
-} from "../pages/post/redux/type";
+  FETCH_REPOSITORIES_REQUEST
+} from "../components/repositories/redux/type";
 import { 
-  fetchPostsSaga,
-  fetchPostSaga,
-  createNewPostSaga,
-  editPostSaga,
-  deletePostSaga,
-  searchPostSaga
-} from "../pages/post/redux/saga";
+  fetchRepositoriesSaga
+} from "../components/repositories/redux/saga";
+
+import { 
+  FETCH_BRANCHES_REQUEST
+  } from "../components/branches/redux/type";
+  import { 
+    fetchBranchesSaga
+  } from "../components/branches/redux/saga";
 
 export default function* rootSaga() {
-  yield takeLatest(FETCH_POSTS, fetchPostsSaga);
-  yield takeLatest(FETCH_POST, fetchPostSaga);
-  yield takeLatest(CREATE_NEW_POST, createNewPostSaga);
-  yield takeLatest(EDIT_POST, editPostSaga);
-  yield takeLatest(DELETE_POST, deletePostSaga);
-  yield takeLatest(SEARCH_POST, searchPostSaga);
+  yield takeLatest(FETCH_REPOSITORIES_REQUEST, fetchRepositoriesSaga);
+  yield takeLatest(FETCH_BRANCHES_REQUEST, fetchBranchesSaga);
 }

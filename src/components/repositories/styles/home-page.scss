@@ -1,0 +1,62 @@
+.app {
+    width: 600px;
+    margin: auto;
+    margin-top: 3%;
+    .logo {
+        width: 200px;
+        margin: auto;
+        margin-top: 5%;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.result-canvas {
+    padding: 20px;
+    border: 1px;
+    // background: aliceblue;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    .user-card {
+        text-align: center;
+        width: inherit;
+        .avatar img {
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+        }
+    }
+    .repositories-card {}
+    .branches-card {
+        position: fixed;
+        right: 15px;
+        width: inherit;
+    }
+    .item {
+        margin-bottom: 10px;
+        background: aliceblue;
+        padding: 20px;
+        p {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        .rating {
+            margin-top: 30px;
+            border-top: 2px solid $app-success-light;
+            padding-top: 10px;
+            span {
+                margin-right: 10px;
+                .fa {
+                    color: $app-success;
+                    padding-left: 3px;
+                }
+            }
+        }
+    }
+    .item:hover {
+        background: white;
+        cursor: pointer;
+    }
+}

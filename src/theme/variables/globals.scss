@@ -1,0 +1,114 @@
+@font-face {
+    src: local("Graphik-Regular"), url("../../fonts/Graphik-Regular.ttf") format("truetype");
+    font-family: 'Graphik';
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+@font-face {
+    src: local("Graphik-Bold"), url("../../fonts/Graphik-Bold.ttf") format("truetype");
+    font-family: 'Graphik';
+    font-weight: bolder;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+@font-face {
+    src: local("Graphik-Light"), url("../../fonts/Graphik-Light.ttf") format("truetype");
+    font-family: 'Graphik';
+    font-weight: lighter;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+@font-face {
+    src: local("Graphik-Semibold"), url("../../fonts/Graphik-Semibold.ttf") format("truetype");
+    font-family: 'Graphik';
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+@font-face {
+    src: local("Graphik-Medium"), url("../../fonts/Graphik-Medium.woff") format("truetype");
+    font-family: 'Graphik';
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+html {
+    font-size: 10pt;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-sizing: border-box;
+    font-family: 'Graphik';
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+body {
+    background: $app-success-light;
+    width: 100%;
+    min-width: 320px;
+}
+
+button {
+    background: none;
+    transition: all ease-in-out 0.25s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 1.5px 4px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+button.no_bg_shadow,
+button.no_bg_shadow:hover {
+    box-shadow: none;
+    background: none;
+}
+
+input {
+    background: #F5F6F7;
+    color: #1E4068;
+    border: 1px solid $app-border;
+    transition: all 0.25s ease-in-out;
+}
+
+input:disabled {
+    background: #F5F6F7;
+    color: #A5B3C3;
+}
+
+input.error {
+    border: 1px solid #FF2020;
+}
+
+.error {
+    color: #FF2020;
+}
+
+.container {
+    @media (max-width: 650px) {
+        width: 500px;
+    }
+    @media (max-width: 550px) {
+        width: 375px;
+    }
+    @media (max-width: 400px) {
+        width: 300px;
+        min-width: 300px;
+    }
+}
