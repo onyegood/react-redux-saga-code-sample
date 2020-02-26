@@ -1,18 +1,16 @@
-import { put } from "redux-saga/effects";
-import axios from "axios";
-
+import { call, put } from "redux-saga/effects";
 import {
   fetchRepositoriesSuccess,
   fetchRepositoriesFailed
 } from "./action";
+import { repositories } from "../../apis/repository";
+
 
 export function* fetchRepositoriesSaga(action) {
-  console.log("action", action);
   try {
-    const response = yield axios.get(`https://api.github.com/users/${action.payload}/repos`);
-    console.log("response", response);
-    yield put(fetchRepositoriesSuccess(response.data));
+    const response = yield call(repositories, action);
+    yield put(fetchRepositoriesSuccess(response));
   } catch (errors) {
-    yield put(fetchRepositoriesFailed(errors));
+    yield put(fetchRepositoriesFailed(errors.response.data.message));
   }
 }

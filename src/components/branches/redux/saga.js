@@ -1,16 +1,12 @@
-import { put } from "redux-saga/effects";
-import axios from "axios";
-
-import {
-  fetchBranchesSuccess,
-  fetchBranchesFailed
-} from "./action";
+import {call, put} from 'redux-saga/effects';
+import {fetchBranchesSuccess, fetchBranchesFailed} from './action';
+import {branches} from '../../apis/branch';
 
 export function* fetchBranchesSaga(action) {
   try {
-      const response = yield axios.get(`https://api.github.com/repos/${action.payload.userName}/${action.payload.name}/branches`);
-      yield put(fetchBranchesSuccess(response.data));
+    const response = yield call(branches, action);
+    yield put(fetchBranchesSuccess(response));
   } catch (errors) {
-    yield put(fetchBranchesFailed(errors));
+    yield put(fetchBranchesFailed(errors.response.data.message));
   }
 }

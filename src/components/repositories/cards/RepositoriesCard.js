@@ -27,7 +27,7 @@ const RepositoriesCard = ({repositories, onClick}) => {
 };
 
 RepositoriesCard.propTypes = {
-  onClick: propTypes.object.isRequired,
+  onClick: propTypes.func.isRequired,
   repositories: propTypes.array.isRequired
 };
 

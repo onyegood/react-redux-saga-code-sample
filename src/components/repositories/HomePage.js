@@ -16,12 +16,11 @@ const HomePage = ({
   loading,
   repositories,
   branches,
+  error
 }) => {
   const [state, setState] = useState({
     value: '',
   });
-
-  console.log("branches", branches);
 
   const onPhraseChange = (param) => {
     setState({value: param});
@@ -49,6 +48,10 @@ const HomePage = ({
 
       {loading ? (
         <LoadingSpinner />
+      ) : error ? (
+        <div className="error-div">
+          <p className="error">{error}</p>
+        </div>
       ) : repositories && repositories.length > 0 ? (
         <div className="result-canvas">
           <div className="col-2">
@@ -83,6 +86,7 @@ const mapStateToProps = (state) => {
     loading: state.repositories.loading,
     repositories: state.repositories.repositories,
     branches: state.branches.branches,
+    error: state.repositories.error
   };
 };
 
@@ -92,6 +96,7 @@ HomePage.propTypes = {
   loading: propTypes.bool.isRequired,
   repositories: propTypes.array.isRequired,
   branches: propTypes.array.isRequired,
+  error: propTypes.string
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

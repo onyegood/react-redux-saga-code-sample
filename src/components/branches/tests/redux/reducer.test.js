@@ -12,6 +12,7 @@ describe('Fetch Github User Repositories', () => {
   it("Should set defualt state", () => {
     const INITIAL = {
       "loading": false, 
+      "error": "",
       "branches": []
     }
   
@@ -45,11 +46,12 @@ describe('Fetch Github User Repositories', () => {
   it('should set loading to false', () => {
 
     const action = {
-      type: FETCH_BRANCHES_FAILED
+      type: FETCH_BRANCHES_FAILED,
+      payload: "Not found"
     }
 
     const response = reducer(null, action);
 
-    expect(response).toEqual({ loading: false });
+    expect(response).toEqual({ loading: false, error: "Not found", branches: [] });
   });
 });

@@ -6,7 +6,8 @@ FETCH_REPOSITORIES_FAILED
 
 const INITIAL_STATE = {
   repositories: [],
-  loading: false
+  loading: false,
+  error: ""
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -20,12 +21,15 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         loading: false,
+        error: "",
         repositories: action.payload,
       };
     case FETCH_REPOSITORIES_FAILED:
         return {
           ...state,
-          loading: false
+          loading: false,
+          repositories: [],
+          error: action.payload
         };
     default:
       return state;
