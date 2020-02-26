@@ -1,4 +1,6 @@
 ## Github User Finder
+Github user finder is a simple web app that search for any Github user by their username and return his/her repositories and when click on any of the repository it return all branches for that repository.
+[![Watch Video](github-user-finder.gif)](https://www.youtube.com/watch?v=tWNexymJ4LU&feature=youtu.be)
 
 ## Getting started
 
